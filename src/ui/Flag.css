@@ -1,0 +1,25 @@
+.flag {
+  display: inline-block;
+  position: relative;
+  flex: none;
+  overflow: hidden;
+  line-height: 0;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.flag--rounded {
+  border-radius: 4px;
+}
+
+/* Subtle fabric sheen */
+.flag::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.22) 0%, transparent 35%, rgba(0, 0, 0, 0.12) 65%, rgba(255, 255, 255, 0.08) 100%);
+  pointer-events: none;
+}
+
+.flag svg {
+  display: block;
+}

@@ -1,0 +1,110 @@
+.btn {
+  --h: 46px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: var(--h);
+  padding: 0 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out),
+    opacity var(--dur);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn--sm {
+  --h: 36px;
+  padding: 0 14px;
+  font-size: 13.5px;
+  gap: 7px;
+}
+
+.btn--lg {
+  --h: 56px;
+  padding: 0 32px;
+  font-size: 16.5px;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* Gold – primary call to action */
+.btn--gold {
+  color: #1a1204;
+  background: var(--gold-gradient);
+  background-size: 200% 100%;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset, 0 -2px 0 rgba(0, 0, 0, 0.15) inset, 0 10px 30px rgba(212, 169, 67, 0.25);
+}
+
+.btn--gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.55) 50%, transparent 65%);
+  background-size: 250% 100%;
+  background-position: 150% 0;
+  transition: background-position 900ms var(--ease-out);
+  pointer-events: none;
+}
+
+.btn--gold:hover:not(:disabled) {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset, 0 -2px 0 rgba(0, 0, 0, 0.15) inset, 0 14px 40px rgba(212, 169, 67, 0.38);
+}
+
+.btn--gold:hover:not(:disabled)::after {
+  background-position: -50% 0;
+}
+
+/* Outline – secondary */
+.btn--outline {
+  color: var(--gold-200);
+  border: 1px solid var(--line-strong);
+  background: rgba(10, 21, 43, 0.5);
+}
+
+.btn--outline:hover:not(:disabled) {
+  border-color: var(--gold-400);
+  background: rgba(226, 189, 101, 0.08);
+  box-shadow: 0 0 24px rgba(226, 189, 101, 0.12);
+}
+
+/* Ghost – tertiary */
+.btn--ghost {
+  color: var(--text-soft);
+  padding-inline: 12px;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  color: var(--gold-200);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn--subtle {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line-soft);
+}
+
+.btn--subtle:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--line);
+}

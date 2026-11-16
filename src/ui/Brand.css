@@ -1,0 +1,50 @@
+.emblem {
+  display: block;
+  overflow: visible;
+}
+
+.emblem__ring {
+  transform-origin: 60px 60px;
+  animation: emblem-spin 90s linear infinite;
+}
+
+@keyframes emblem-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  direction: ltr;
+}
+
+.wordmark__text {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  line-height: 1;
+}
+
+.wordmark__61 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.wordmark__name {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--text);
+}
+
+.wordmark--compact .wordmark__61 {
+  font-size: 18px;
+}
+
+.wordmark--compact .wordmark__name {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+}

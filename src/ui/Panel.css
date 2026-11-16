@@ -1,0 +1,185 @@
+.panel {
+  position: relative;
+  border-radius: var(--r-lg);
+  background: var(--panel-gradient);
+  border: 1px solid var(--line-soft);
+  box-shadow: var(--shadow-1);
+  min-width: 0;
+}
+
+/* Gold hairline along the top edge */
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 18% auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(226, 189, 101, 0.45), transparent);
+  pointer-events: none;
+}
+
+.panel--padded {
+  padding: 18px 20px 20px;
+}
+
+.panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.panel__title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gold-200);
+}
+
+.panel__icon {
+  color: var(--gold-400);
+}
+
+/* Meter */
+.meter + .meter {
+  margin-top: 14px;
+}
+
+.meter__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 7px;
+  font-size: 13.5px;
+}
+
+.meter__label {
+  color: var(--text-soft);
+}
+
+.meter__value {
+  font-weight: 700;
+  color: var(--text);
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.meter__track {
+  height: 6px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.meter__fill {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 700ms var(--ease-out);
+}
+
+.meter__fill--gold {
+  background: linear-gradient(90deg, #9c7424, #e2bd65, #f6e3a8);
+}
+.meter__fill--blue {
+  background: linear-gradient(90deg, #2c4a85, #66aefc);
+}
+.meter__fill--green {
+  background: linear-gradient(90deg, #1f7a5a, #46d39a);
+}
+.meter__fill--red {
+  background: linear-gradient(90deg, #8a2a3a, #f06478);
+}
+
+.delta {
+  font-size: 9px;
+}
+.delta--up {
+  color: var(--success);
+}
+.delta--down {
+  color: var(--danger);
+}
+
+/* Sparkline */
+.sparkline {
+  display: block;
+  overflow: visible;
+}
+.sparkline__line {
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+.sparkline__area {
+  opacity: 0.16;
+}
+.sparkline--gold .sparkline__line {
+  stroke: var(--gold-400);
+}
+.sparkline--gold .sparkline__area,
+.sparkline--gold .sparkline__dot {
+  fill: var(--gold-400);
+}
+.sparkline--green .sparkline__line {
+  stroke: var(--success);
+}
+.sparkline--green .sparkline__area,
+.sparkline--green .sparkline__dot {
+  fill: var(--success);
+}
+.sparkline--red .sparkline__line {
+  stroke: var(--danger);
+}
+.sparkline--red .sparkline__area,
+.sparkline--red .sparkline__dot {
+  fill: var(--danger);
+}
+.sparkline--blue .sparkline__line {
+  stroke: var(--info);
+}
+.sparkline--blue .sparkline__area,
+.sparkline--blue .sparkline__dot {
+  fill: var(--info);
+}
+
+/* Chip */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid var(--line-soft);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-soft);
+}
+
+.chip--gold {
+  color: var(--gold-200);
+  border-color: var(--line-strong);
+  background: rgba(226, 189, 101, 0.08);
+}
+.chip--success {
+  color: var(--success);
+  border-color: rgba(70, 211, 154, 0.3);
+  background: rgba(70, 211, 154, 0.08);
+}
+.chip--danger {
+  color: var(--danger);
+  border-color: rgba(240, 100, 120, 0.3);
+  background: rgba(240, 100, 120, 0.08);
+}
+.chip--info {
+  color: var(--info);
+  border-color: rgba(102, 174, 252, 0.3);
+  background: rgba(102, 174, 252, 0.08);
+}
