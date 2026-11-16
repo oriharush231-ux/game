@@ -1,0 +1,142 @@
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.4vw, 28px);
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.mode-card {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  border-radius: var(--r-xl);
+  background: var(--panel-gradient);
+  border: 1px solid var(--line-soft);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+  transition:
+    transform var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out);
+}
+
+.mode-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line);
+  box-shadow: var(--shadow-2);
+}
+
+.mode-card.is-selected {
+  border-color: rgba(226, 189, 101, 0.7);
+  box-shadow: var(--glow-gold), var(--shadow-2);
+}
+
+.mode-card__visual {
+  position: relative;
+  height: clamp(170px, 22vw, 240px);
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(44, 74, 133, 0.55), transparent 70%),
+    linear-gradient(180deg, #0a1631, #081226);
+  border-bottom: 1px solid var(--line-soft);
+  overflow: hidden;
+}
+
+.mode-card__visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(8, 18, 38, 0.9), transparent 45%);
+  pointer-events: none;
+}
+
+.mode-card__visual--global .worldmap {
+  position: absolute;
+  inset: 0 -6%;
+  width: 112%;
+}
+
+.mode-card__body {
+  padding: 22px 26px 26px;
+}
+
+.mode-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mode-card__sub {
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  color: var(--gold-400);
+}
+
+.mode-card__title {
+  margin-top: 6px;
+  font-size: clamp(24px, 2.6vw, 30px);
+  color: var(--ivory);
+}
+
+.mode-card__desc {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 14.5px;
+}
+
+/* Solo visual – concentric rings around a single nation */
+.solo-visual {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.solo-visual__ring {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid rgba(226, 189, 101, 0.35);
+  animation: solo-ring 4.5s var(--ease-out) infinite;
+}
+
+.solo-visual__ring:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.solo-visual__ring:nth-child(3) {
+  animation-delay: 3s;
+}
+
+@keyframes solo-ring {
+  from {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.solo-visual__core {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  font-size: 38px;
+  font-weight: 700;
+  color: #1a1204;
+  background: var(--gold-gradient);
+  box-shadow: 0 0 0 8px rgba(226, 189, 101, 0.1), 0 0 50px rgba(226, 189, 101, 0.4);
+}
+
+@media (max-width: 760px) {
+  .mode-grid {
+    grid-template-columns: 1fr;
+  }
+}
