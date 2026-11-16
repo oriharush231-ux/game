@@ -1,0 +1,316 @@
+.role-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2.2vw, 24px);
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.path-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 2.6vw, 28px);
+}
+
+.path-card__head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.path-card__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  flex: none;
+  border-radius: 16px;
+  color: var(--gold-200);
+  background: linear-gradient(145deg, rgba(226, 189, 101, 0.18), rgba(226, 189, 101, 0.03));
+  border: 1px solid var(--line);
+}
+
+.path-card__titles {
+  flex: 1;
+}
+
+.path-card__sub {
+  font-size: 12.5px;
+  color: var(--gold-400);
+}
+
+.path-card__title {
+  font-size: clamp(24px, 2.6vw, 30px);
+  color: var(--ivory);
+}
+
+.path-card__rank {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin-top: 20px;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: rgba(5, 11, 24, 0.55);
+  border: 1px solid var(--line-soft);
+  font-size: 13px;
+}
+
+.path-card__rank strong {
+  font-size: 16px;
+  color: var(--gold-100);
+}
+
+.path-card__native {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.path-card__desc {
+  margin-top: 14px;
+  color: var(--text-muted);
+  font-size: 14.5px;
+}
+
+.path-card__stats {
+  margin-top: 18px;
+}
+
+.path-card__perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.path-card__perks li {
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line-soft);
+}
+
+/* Career ladder */
+.ladder {
+  max-width: 1040px;
+  margin: clamp(18px, 2.4vw, 28px) auto 0;
+  padding: 20px clamp(16px, 2.4vw, 28px) 24px;
+  border-radius: var(--r-xl);
+  background: var(--panel-gradient);
+  border: 1px solid var(--line-soft);
+}
+
+.ladder__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.ladder__head h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold-200);
+}
+
+.ladder__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ladder__steps::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  inset-inline: 8%;
+  height: 1px;
+  background: linear-gradient(270deg, var(--gold-600), rgba(226, 189, 101, 0.15));
+}
+
+.ladder__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 0 4px;
+}
+
+.ladder__node {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--navy-900);
+  border: 1px solid var(--line);
+  transition: all var(--dur) var(--ease-out);
+}
+
+.ladder__step.is-past .ladder__node {
+  color: var(--gold-500);
+  border-color: var(--gold-700);
+}
+
+.ladder__step.is-start .ladder__node {
+  color: #1a1204;
+  background: var(--gold-gradient);
+  border-color: transparent;
+  box-shadow: 0 0 0 5px rgba(226, 189, 101, 0.12), 0 0 22px rgba(226, 189, 101, 0.45);
+}
+
+.ladder__step:last-child .ladder__node {
+  border-color: var(--gold-500);
+  color: var(--gold-300);
+}
+
+.ladder__title {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.ladder__step.is-start .ladder__title {
+  color: var(--gold-200);
+}
+
+.ladder__native {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+}
+
+/* Identity form */
+.identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 16px 24px;
+  max-width: 1040px;
+  margin: clamp(18px, 2.4vw, 28px) auto 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field__label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.field__input {
+  height: 50px;
+  padding: 0 16px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: rgba(5, 11, 24, 0.6);
+  font-size: 16px;
+  transition: border-color var(--dur), box-shadow var(--dur);
+}
+
+.field__input::placeholder {
+  color: var(--text-faint);
+}
+
+.field__input:focus {
+  outline: none;
+  border-color: var(--gold-400);
+  box-shadow: 0 0 0 3px rgba(226, 189, 101, 0.15);
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  height: 50px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: rgba(5, 11, 24, 0.6);
+}
+
+.segmented button {
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text-soft);
+  transition: all var(--dur) var(--ease-out);
+}
+
+.segmented button:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.segmented button.is-active {
+  color: #1a1204;
+  font-weight: 600;
+  background: var(--gold-gradient);
+  box-shadow: 0 4px 14px rgba(212, 169, 67, 0.25);
+}
+
+@media (max-width: 860px) {
+  .path-grid,
+  .identity {
+    grid-template-columns: 1fr;
+  }
+  .ladder__steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .ladder__steps::before {
+    top: 8px;
+    bottom: 8px;
+    inset-inline: 15px auto;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, var(--gold-600), rgba(226, 189, 101, 0.15));
+  }
+  .ladder__step {
+    flex-direction: row;
+    text-align: start;
+    gap: 12px;
+  }
+  .ladder__node {
+    margin-bottom: 0;
+    flex: none;
+  }
+  .ladder__native {
+    margin-inline-start: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .segmented button {
+    font-size: 13px;
+  }
+}
