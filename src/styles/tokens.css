@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Design tokens – 61 WORLD LEADERS
+   Midnight navy · gold · ivory. Premium strategy UI.
+   ========================================================================== */
+:root {
+  /* Navy scale */
+  --navy-1000: #03070f;
+  --navy-950: #050b18;
+  --navy-900: #081226;
+  --navy-850: #0b1830;
+  --navy-800: #0f1f3d;
+  --navy-700: #16294f;
+  --navy-600: #1f3768;
+  --navy-500: #2c4a85;
+
+  /* Gold scale */
+  --gold-100: #fbf3dc;
+  --gold-200: #f6e3a8;
+  --gold-300: #edd28a;
+  --gold-400: #e2bd65;
+  --gold-500: #d4a943;
+  --gold-600: #b48a2e;
+  --gold-700: #8a6820;
+
+  --ivory: #f7f4ec;
+  --text: #e8edf6;
+  --text-soft: #b9c4da;
+  --text-muted: #8392b0;
+  --text-faint: #5b6a8a;
+
+  --success: #46d39a;
+  --danger: #f06478;
+  --info: #66aefc;
+  --warning: #f2b45a;
+
+  /* Surfaces */
+  --surface-0: var(--navy-950);
+  --surface-1: rgba(14, 28, 56, 0.72);
+  --surface-2: rgba(20, 38, 74, 0.78);
+  --surface-solid: #0d1b36;
+  --line: rgba(226, 189, 101, 0.14);
+  --line-strong: rgba(226, 189, 101, 0.32);
+  --line-soft: rgba(255, 255, 255, 0.07);
+
+  --gold-gradient: linear-gradient(135deg, #f8e7b0 0%, #e2bd65 38%, #b48a2e 70%, #f0d58e 100%);
+  --gold-text: linear-gradient(180deg, #fff5d6 0%, #edd28a 45%, #c49a3a 100%);
+  --panel-gradient: linear-gradient(180deg, rgba(22, 41, 79, 0.62) 0%, rgba(10, 21, 43, 0.72) 100%);
+
+  /* Typography */
+  --font-display: 'Frank Ruhl Libre', 'Times New Roman', serif;
+  --font-body: 'Heebo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-latin: 'Cinzel', 'Trajan Pro', Georgia, serif;
+
+  /* Radii, shadows, motion */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --shadow-1: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-2: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 18px 50px rgba(0, 0, 0, 0.5);
+  --glow-gold: 0 0 0 1px rgba(226, 189, 101, 0.5), 0 0 28px rgba(226, 189, 101, 0.22);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur: 280ms;
+  --dur-slow: 600ms;
+
+  --gutter: clamp(16px, 4vw, 40px);
+  --topbar-h: 64px;
+  --bottomnav-h: 68px;
+
+  color-scheme: dark;
+}
