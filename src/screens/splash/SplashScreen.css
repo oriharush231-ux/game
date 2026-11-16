@@ -1,0 +1,213 @@
+.splash {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px var(--gutter) 24px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.splash__map {
+  position: absolute;
+  inset: -4% -10%;
+  opacity: 0.55;
+  animation: map-drift 40s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes map-drift {
+  from {
+    transform: translate3d(-1.5%, 0, 0) scale(1.04);
+  }
+  to {
+    transform: translate3d(1.5%, -1%, 0) scale(1.08);
+  }
+}
+
+.splash__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 50% at 50% 46%, rgba(5, 11, 24, 0.82) 0%, rgba(5, 11, 24, 0.55) 45%, transparent 75%),
+    radial-gradient(ellipse at 50% 120%, rgba(212, 169, 67, 0.16), transparent 55%),
+    linear-gradient(180deg, rgba(3, 7, 15, 0.7) 0%, transparent 25%, transparent 70%, rgba(3, 7, 15, 0.95) 100%);
+}
+
+.splash__beam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 46%;
+  background: linear-gradient(180deg, transparent, rgba(226, 189, 101, 0.5), transparent);
+  opacity: 0.6;
+}
+
+.splash__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 760px;
+  margin-top: auto;
+}
+
+.splash__emblem {
+  filter: drop-shadow(0 0 40px rgba(226, 189, 101, 0.25));
+  margin-bottom: 26px;
+}
+
+.splash__title {
+  margin: 0;
+}
+
+.splash__title-main {
+  display: block;
+  font-size: clamp(34px, 7.2vw, 78px);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  padding-inline-start: 0.14em; /* optical centering for letter-spacing */
+  filter: drop-shadow(0 4px 30px rgba(226, 189, 101, 0.18));
+}
+
+.splash__rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0 20px;
+}
+
+.splash__rule span {
+  width: clamp(60px, 14vw, 140px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-500));
+}
+
+.splash__rule span:last-child {
+  transform: scaleX(-1);
+}
+
+.splash__rule i {
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  background: var(--gold-400);
+  box-shadow: 0 0 12px var(--gold-400);
+}
+
+.splash__tagline {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.4vw, 32px);
+  font-weight: 500;
+  color: var(--ivory);
+}
+
+.splash__sub {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: clamp(13.5px, 1.6vw, 15.5px);
+  max-width: 520px;
+}
+
+.splash__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 36px;
+}
+
+.splash__actions .btn--lg {
+  min-width: 220px;
+}
+
+.splash__continue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 22px 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgba(10, 21, 43, 0.7);
+  text-align: start;
+  transition: border-color var(--dur), background var(--dur), box-shadow var(--dur);
+}
+
+.splash__continue:hover {
+  border-color: var(--gold-400);
+  background: rgba(226, 189, 101, 0.07);
+  box-shadow: 0 0 30px rgba(226, 189, 101, 0.12);
+}
+
+.splash__continue-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.splash__continue-text strong {
+  color: var(--gold-200);
+  font-size: 14.5px;
+}
+
+.splash__continue-text span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.splash__footer {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.splash__nations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+}
+
+.splash__nation {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.splash__version {
+  font-size: 10.5px;
+  letter-spacing: 0.3em;
+  color: var(--text-faint);
+}
+
+@media (max-width: 560px) {
+  .splash__map {
+    inset: 8% -60% auto;
+    height: 60%;
+  }
+  .splash__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .splash__actions .btn--lg,
+  .splash__continue {
+    width: 100%;
+    justify-content: center;
+  }
+  .splash__nation > span:not(.flag) {
+    display: none;
+  }
+}
